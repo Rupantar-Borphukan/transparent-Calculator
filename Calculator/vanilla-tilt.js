@@ -14,7 +14,6 @@ class VanillaTilt {
     this.left = null;
     this.top = null;
 
-    // for Gyroscope sampling
     this.gammazero = null;
     this.betazero = null;
     this.lastgammazero = null;
@@ -56,10 +55,6 @@ class VanillaTilt {
     return setting === "" || setting === true || setting === 1;
   }
 
-  /**
-   * Method returns element what will be listen mouse events
-   * @return {Node}
-   */
   getElementListener() {
     if (this.fullPageListening) {
       return window.document;
@@ -80,10 +75,6 @@ class VanillaTilt {
     return this.element;
   }
 
-  /**
-   * Method set listen methods for this.elementListener
-   * @return {Node}
-   */
   addEventListeners() {
     this.onMouseEnterBind = this.onMouseEnter.bind(this);
     this.onMouseMoveBind = this.onMouseMove.bind(this);
@@ -104,9 +95,6 @@ class VanillaTilt {
     }
   }
 
-  /**
-   * Method remove event listeners from current this.elementListener
-   */
   removeEventListeners() {
     this.elementListener.removeEventListener("mouseenter", this.onMouseEnterBind);
     this.elementListener.removeEventListener("mouseleave", this.onMouseLeaveBind);
@@ -311,10 +299,6 @@ class VanillaTilt {
     this.updateCall = null;
   }
 
-  /**
-   * Appends the glare element (if glarePrerender equals false)
-   * and sets the default style
-   */
   prepareGlare() {
     // If option pre-render is enabled we assume all html/css is present for an optimal glare effect.
     if (!this.glarePrerender) {
