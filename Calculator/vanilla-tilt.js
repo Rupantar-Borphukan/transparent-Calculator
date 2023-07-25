@@ -474,7 +474,6 @@ class VanillaTilt {
 }
 
 if (typeof document !== "undefined") {
-  /* expose the class to window */
   window.VanillaTilt = VanillaTilt;
 
   /**
